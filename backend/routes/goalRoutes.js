@@ -1,12 +1,16 @@
 const express = require('express')
 const router = express.Router()
-const { getFunctoin, PostFunctoin, putFunctoin, deleteFunctoin } = require('../controllers/goalController')
+const { getFunctoin, PostFunctoin, putFunctoin, deleteFunctoin,getSingle } = require('../controllers/goalController')
+const { protect } = require('../middleware/authMiddleware')
 //request
 
-router.get('/api', getFunctoin)
-router.post('/api',PostFunctoin)
-router.put('/api/:id',putFunctoin)
-router.delete('/api',deleteFunctoin)
+router.get('/api',protect ,getFunctoin)
+router.post('/api',protect,PostFunctoin)
+//to get a single GET request
+router.get('/api/:id', protect,getSingle)
+
+router.put('/api/:id',protect,putFunctoin)
+router.delete('/api/:id',protect,deleteFunctoin)
 
 
 module.exports = router
