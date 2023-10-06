@@ -65,7 +65,7 @@ if(goal.user.toString() !== user.id){
 	throw new Error('Stupid User is not authorized You theif!')
 }
 	const deletegoal = await Goal.findByIdAndRemove(req.params.id)
-res.send(`this is been deleted ${deletegoal}`)
+res.send(deletegoal)
 })
 
 module.exports = {getFunctoin,getSingle,PostFunctoin,putFunctoin,deleteFunctoin}

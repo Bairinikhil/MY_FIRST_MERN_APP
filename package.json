@@ -1,3 +1,4 @@
+
 {
   "name": "mern_01",
   "version": "1.0.0",
@@ -6,7 +7,8 @@
   "scripts": {
     "start": "node backend/server.js",
     "server": "nodemon backend/server.js",
-    "client":"npm start --prefix frontend"
+    "client": "npm start --prefix frontend",
+    "dev":"concurrently \"npm run server\" \"npm run client\""
   },
   "author": "bairi nikhil kumar",
   "license": "ISC",
@@ -18,5 +20,8 @@
     "express-async-handler": "^1.2.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^7.5.3"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.1"
   }
 }
