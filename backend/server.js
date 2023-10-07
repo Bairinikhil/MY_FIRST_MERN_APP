@@ -15,7 +15,10 @@ app.use(express.urlencoded({extended:false}))
 
 const corsOptions = {
   origin: 'https://my-first-mern-app.vercel.app/',
-  optionsSuccessStatus: 200, // Some legacy browsers (IE11) may not send 204
+  ethods: ["GET", "PUT", "POST", "DELETE", "OPTIONS"],
+  credentials: true,
+   optionsSuccessStatus: 200, // Some legacy browsers (IE11) may not send 204
+ headers: "*"
 };
 
 app.use(cors(corsOptions));
