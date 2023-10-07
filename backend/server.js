@@ -4,6 +4,7 @@ const dotenv = require('dotenv').config()
 const colors = require('colors')
 const port = process.env.PORT
 const app = express()
+const cors = require('cors')
 const ConnectionDB = require('./config/db')
 
 
@@ -11,6 +12,13 @@ ConnectionDB()
 //to get the input fields from form
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
+
+const corsOptions = {
+  origin: 'https://my-first-mern-app.vercel.app/',
+  optionsSuccessStatus: 200, // Some legacy browsers (IE11) may not send 204
+};
+
+app.use(cors(corsOptions));
 
 app.use('/', require('./routes/goalRoutes'))
 app.use('/api/users',require('./routes/userRoutes'))
