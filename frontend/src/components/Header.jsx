@@ -19,7 +19,7 @@ navigate('/')
 	return(
 		<header className='header'>
 			<div className='logo'>
-				<Link to='/' >home baby</Link>
+				<Link to='/' >Home</Link>
 			</div>
 			<ul>
 		
