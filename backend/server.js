@@ -14,7 +14,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 
 const corsOptions = {
-  origin:  [CLIENT_URL, `${CLIENT_URL}/`],
+  origin: "*",
   ethods: ["GET", "PUT", "POST", "DELETE", "OPTIONS"],
   credentials: true,
    optionsSuccessStatus: 200, // Some legacy browsers (IE11) may not send 204
