@@ -18,7 +18,6 @@ const corsOptions = {
   ethods: ["GET", "PUT", "POST", "DELETE", "OPTIONS"],
   credentials: true,
    optionsSuccessStatus: 200, // Some legacy browsers (IE11) may not send 204
- headers: "*"
 };
 
 app.use(cors(corsOptions));
